@@ -1,0 +1,70 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <%- include('./partielles/messages') %>
+            <h1><i class="fas fa-user-plus"></i> Modification d'un livre</h1>
+            <form action="/livreModif" method="post">
+
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" class="form-control" 
+                      placeholder="Entrez le nom"
+                      value="<%= typeof nom != 'undefined' ? nom : '' %>" >
+                </div>
+
+                <div class="form-group">
+                    <label for="auteur">Auteur</label>
+                    <input type="text" name="auteur" id="auteur" class="form-control" 
+                      placeholder="Entrez l'auteur"
+                      value="<%= typeof auteur != 'undefined' ? auteur : '' %>" >
+                </div>
+
+                <div class="form-group">
+                    <label for="langue">Langue</label>
+                    <input type="text" name="langue" id="langue" class="form-control" 
+                      placeholder="Entrez la langue"
+                      value="<%= typeof langue != 'undefined' ? langue  : '' %>" >
+                </div>
+
+                <div class="form-group">
+                    <label for="edition">Edition</label>
+                    <input type="text" name="edition" id="edition" class="form-control" 
+                      placeholder="Entrez l'édition"
+                      value="<%= typeof edition != 'undefined' ? edition : '' %>" >
+                </div>
+
+                <div class="form-group">
+                    <label for="nbPages">Pages</label>
+                    <input type="number" name="nbPages" id="nbPages" class="form-control" 
+                      placeholder="Entrez le nombre de pages"
+                      value="<%= typeof nbPages != 'undefined' ? nbPages : '' %>" >
+                </div>
+
+                <div class="form-group">
+                    <label for="prix">Prix</label>
+                    <input type="number" name="prix" id="prix" class="form-control" 
+                      placeholder="Entrez le prix"
+                      value="<%= typeof prix != 'undefined' ? prix : '' %>" >
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" class="form-control" 
+                      placeholder="Entrez la description"
+                      value="<%= typeof description != 'undefined' ? description : '' %>" >
+                </div>
+
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <input type="text" name="url" id="url" class="form-control" 
+                      placeholder="Entrez l'URL"
+                      value="<%= typeof url != 'undefined' ? url : '' %>" >
+                </div>
+<br>
+                <button type="submit" class="btn btn-primary btn-block">Confirmer la modification de l'usager</button>
+                <a href="/livres/" class="btn btn-danger">Annuler la modification</a>
+            </form>
+        </div>
+    </div>
+    
+</div>

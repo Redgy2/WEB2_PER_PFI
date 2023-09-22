@@ -1,0 +1,17 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <%- include('./partielles/messages') %>
+            <h1><i class="fas fa-user-plus"></i> Ajout d'un usager</h1>
+            <form action="/userAdd" method="post" enctype="multipart/form-data">
+                <%- include('./partielles/edit_nom_email') %>
+                <%- include('./partielles/edit_passwords') %>
+                <%- include('./partielles/edit_roles') %>
+                <%- include('./partielles/edit_image') %>
+                <button type="submit" class="btn btn-primary btn-block">Confirmer l'ajout de l'usager</button>
+                <a href="/usagers/menu">Annuler l'ajout</a>
+            </form>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,35 @@
+<div class="container" id="bd">
+    <h2 class="text-center">Liste des livres</h2>
+    
+    <% if (typeof listeLivres == 'undefined') { %>
+        <p>Aucun usager</p>
+    <% } else { %> 
+    <ul class="list-group" >
+        <% listeLivres.forEach((unLivre)=>{ %>
+            <li class="list-group-item">
+                <div style="text-align: center" id="bd2">
+             <p><img class="imgProfil" src="<%= unLivre.url %>" alt=""></p>
+               <h4>Nom :</h4> <p> <%= unLivre.nom %></p> 
+              <h4>Description :</h4>  <p> <%= unLivre.description %> </p> 
+               <h4>Auteur :</h4> <p> <%= unLivre.auteur %></p> 
+               <h4>Langue :</h4> <p> <%= unLivre.langue %> </p>
+              <h4>Edition :</h4>  <p> <%= unLivre.edition %></p> 
+               <h4>Pages :</h4> <p><%= unLivre.nbPages %> </p>
+              <h4>Prix :</h4>  <p> <%= unLivre.prix %> $</p>
+
+                <a href="/livres/editer/<%=unLivre.nom%>"><i class="fas fa-solid fa-pen"></i></a>
+                - 
+                <a href="/livres/supprimer/<%=unLivre.nom%>" onclick="return confirm('Voulez vous vraiment supprimer?');"><i class="fas fa-solid fa-trash"></i></a>
+            </div> 
+                 
+            </li>
+        <% }); %>
+    </ul>
+    <% } %>
+    <br>
+    <div style="text-align: center"><a href="/livres/ajouter" class="btn btn-info">Ajouter</a></div>
+    <br>
+    <div style="text-align: center">
+    <a href="/index" class="btn btn-danger">Retour au menu</a>
+    </div>
+    

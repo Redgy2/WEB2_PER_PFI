@@ -1,0 +1,34 @@
+<div class="container">
+<h2 class="text-center">Liste des usagers</h2>
+
+<% if (typeof listeUsagers == 'undefined') { %>
+    <p>Aucun usager</p>
+<% } else { %> 
+<ul class="list-group">
+    <% listeUsagers.forEach((unUsager)=>{ %>
+        <li class="list-group-item">
+            <img src="/images/<%= unUsager.nomImage %>" class="imgProfil" alt="image profil">
+            <%= unUsager.nom %>
+            (<%= unUsager.email %>) - 
+            <% if (unUsager.roles.includes('admin')) { %>
+                (Admin) -
+            <% } %>
+            <% if (unUsager.roles.includes('gestion')) { %>
+               (Gestion) -
+            <% } %>
+            
+            <a href="/usagers/editer/<%=unUsager.email%>"><i class="fas fa-solid fa-pen"></i></a>
+            - 
+            <a href="/usagers/supprimer/<%=unUsager.email%>" onclick="return confirm('Voulez vous vraiment supprimer?');"><i class="fas fa-solid fa-trash"></i></a>
+
+
+        </li>
+    <% }); %>
+</ul>
+<% } %>
+<br>
+<div style="text-align: center"><a href="/usagers/ajouter" class="btn btn-success">Ajouter un usager</a></div>
+<br>
+<div style="text-align: center">
+<a href="/index" class="btn btn-danger">Retour au menu</a>
+</div>
