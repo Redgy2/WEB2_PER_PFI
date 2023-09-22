@@ -13,7 +13,7 @@ const session = require("express-session");
 const multer = require("multer");
 const upload = multer({dest: "./uploads"});
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const storage = multer.diskStorage({
   destination: function(req,file,callback) {
